@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Collective CR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Aqui primero va el encabezado (header) y Navegacion de la webb -->
+    <header class="header">
+        <a href="#" class="logo">HIDDEN <span>COLLECTIVE</span></a>
+        
+        <!-- aca el boton menuuuu -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="nav" id="navMenu">
+            <ul>
+                <li><a href="#" onclick="toggleMenu()">Inicio</a></li>
+                <li><a href="#catalogo" onclick="toggleMenu()">Catálogo</a></li>
+                <li><a href="#nosotros" onclick="toggleMenu()">Nosotros</a></li>
+                <li><a href="#galeria" onclick="toggleMenu()">Galería</a></li>
+                <li><a href="#contacto" onclick="toggleMenu()">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </header>
+
+    <!-- aca la sección hero (Esta parte es la principal q se ve en la web) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ℌ𝔦𝔡𝔡𝔢𝔫 ℭ𝔬𝔩𝔩𝔢𝔠𝔱𝔦𝔳𝔢</h1>
+            <p>¡Bienvenid@ a Hidden Collective!</p>
+            <p>Encuentra lo oculto. Descubre tu Style.</p>
+            <p>Tu estilo. Tu identidad. Tu esencia.</p>
+            <a href="#catalogo" class="btn">Explorar Colección</a>
+        </div>
+    </section>
+
+    <!-- aqui el codigo de la seccion de Nosotros -->
+    <section class="container nosotros-section" id="nosotros">
+        <h2 class="section-title">Sobre Nosotros</h2>
+        <div class="nosotros-grid">
+            <div class="nosotros-card">
+                <h3><i class="fa-solid fa-book-open"></i> Nuestra Historia</h3>
+                <p>Nacimos con la idea de traer piezas únicas y de colección a nuestro país Costa Rica. Buscamos en cada rincón para ofrecerte prendas que destaquen por su exclusividad, calidad y estilo urbano.</p>
+            </div>
+            <div class="nosotros-card">
+                <h3><i class="fa-solid fa-rocket"></i> Misión</h3>
+                <p>Brindar a nuestros clientes una selección de ropa a su Style, promoviendo la expresión personal a través de piezas auténticas y sostenibles.</p>
+            </div>
+            <div class="nosotros-card">
+                <h3><i class="fa-solid fa-eye"></i> Visión</h3>
+                <p>Convertirnos en el referente número uno de moda unica, urbana y vintage en Costa Rica, creando una comunidad unida por la moda, el arte, la música y el buen vestir.</p>
+            </div>
+            <div class="nosotros-card">
+                <h3><i class="fa-solid fa-heart"></i> Valores</h3>
+                <p>Autenticidad, sostenibilidad, pasión por los detalles, respeto por la moda clásica y compromiso total con nuestros clientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- aqui Seccion del Catalogo de los productos de ropa -->
+    <main class="container" id="catalogo">
+        <h2 class="section-title">Nuestra Colección</h2>
+        
+        <div class="filters">
+       <button class="filter-btn active" onclick="filterProducts('all', this)">Todos</button>
+        <button class="filter-btn" onclick="filterProducts('hidden', this)">Hidden / Exclusivos</button>
+        <button class="filter-btn" onclick="filterProducts('Colaboracion', this)">Colaboraciones</button>
+        <button class="filter-btn" onclick="filterProducts('popular', this)">Marcas Reconocidas</button>
+         <button class="filter-btn" onclick="filterProducts('Artistas', this)">Artistas / Cantantes</button>
+         <button class="filter-btn" onclick="filterProducts('vintage', this)">Vintage</button>
+        <button class="filter-btn" onclick="filterProducts('Hombre', this)">Hombre</button>
+         <button class="filter-btn" onclick="filterProducts('Mujer', this)">Mujer</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+
+            <!-- este codigo hace q loss productos cargaran automáticamente -->
+        </div>
+    </main>
+
+    <!-- pestaña de galeria -->
+    <section class="container" id="galeria">
+        <h2 class="section-title">Galería del Negocio</h2>
+        <div class="gallery-grid">
+            <img src="sueter under armour.jpg" alt="Galería 1" class="gallery-img">
+            <img src="short lakers.jpg" alt="Galería 2" class="gallery-img">
+            <img src="camisa basket.jpg" alt="Galería 3" class="gallery-img">
+            <img src="pantalon mezclilla elegante.jpg" alt="Galería 4" class="gallery-img">
+        </div>
+    </section>
+
+    <!-- pestaÑa de Contacto -->
+    <section class="container contacto-section" id="contacto">
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="contacto-wrapper">
+            <div class="contacto-info">
+                <h3>Información de Contacto</h3>
+                <p><i class="fa-solid fa-phone"></i> +506 7207-4687</p>
+                <p><i class="fa-brands fa-whatsapp"></i> WhatsApp Disponible</p>
+                <p><i class="fa-solid fa-envelope"></i> hidden.collective.cr@gmail.com</p>
+                <p><i class="fa-brands fa-instagram"></i> @hidden_collective_cr</p>
+            </div>
+            <form class="contacto-form" id="contactForm">
+                <input type="text" id="nombre" placeholder="Tu Nombre" required>
+                <input type="email" id="correo" placeholder="Tu Correo Electrónico" required>
+                <textarea id="mensaje" rows="4" placeholder="¿En qué te podemos ayudar?" required></textarea>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+                <p id="formFeedback" class="form-feedback"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- aqui el codigo como el carrito de Compras -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <i class="fa-solid fa-xmark close-cart" onclick="toggleCart()"></i>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart-text">El carrito está vacío</p>
+        </div>
+        <div class="cart-total" id="cartTotal">Total: ¢0</div>
+        <button class="checkout-btn" onclick="checkout()">Comprar vía WhatsApp</button>
+    </div>
+
+    <!-- codigo q realicee para hacer el pie de pagina web -->
+    <footer class="footer">
+        <p>&copy; 2026 Hidden Collective CR. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
